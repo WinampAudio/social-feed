@@ -10,6 +10,8 @@ export const socialPosts: SocialPost[] = [
     content:
       "Feeling blessed today! Grateful for everything in my life. 🌟 #blessed",
     createdAt: "2025-03-21T08:30:00Z",
+    commentsCount: 10,
+    likesCount: 52,
     tier: {
       uid: "free-tier-uid",
       description: null,
@@ -35,6 +37,8 @@ export const socialPosts: SocialPost[] = [
     content:
       "Excited for the big event tonight! 🎉 Can't wait to share more! #EventGoals",
     createdAt: "2025-03-20T12:15:00Z",
+    commentsCount: 5,
+    likesCount: 30,
     tier: {
       uid: "premium-tier-uid",
       description: "Exclusive access to behind-the-scenes content.",
@@ -52,6 +56,8 @@ export const socialPosts: SocialPost[] = [
     uid: "post3-uid",
     content: "Loving the view from here! 🌄 #NatureVibes",
     createdAt: "2025-03-19T18:00:00Z",
+    commentsCount: 0,
+    likesCount: 0,
     tier: {
       uid: "free-tier-uid",
       description: null,
@@ -77,6 +83,8 @@ export const socialPosts: SocialPost[] = [
     content:
       "Just finished a new project and I couldn't be more proud! 💪 #Success #WorkHardPlayHard",
     createdAt: "2025-03-18T14:00:00Z",
+    commentsCount: 15,
+    likesCount: 75,
     tier: {
       uid: "premium-tier-uid",
       description: "Exclusive content and sneak peeks.",
@@ -101,6 +109,8 @@ export const socialPosts: SocialPost[] = [
     uid: "post5-uid",
     content: "Happy to finally have a day off to relax! 🛀 #SelfCare",
     createdAt: "2025-03-17T09:45:00Z",
+    commentsCount: 2,
+    likesCount: 20,
     tier: {
       uid: "free-tier-uid",
       description: null,
@@ -119,6 +129,8 @@ export const socialPosts: SocialPost[] = [
     content:
       "Just received some exciting news. Big things are coming soon! 🎯 #StayTuned",
     createdAt: "2025-03-16T15:30:00Z",
+    commentsCount: 8,
+    likesCount: 40,
     tier: {
       uid: "premium-tier-uid",
       description: "Exclusive updates for members.",
@@ -136,6 +148,8 @@ export const socialPosts: SocialPost[] = [
     uid: "post7-uid",
     content: "Another beautiful sunset in the books! 🌅 #Grateful",
     createdAt: "2025-03-15T19:30:00Z",
+    commentsCount: 3,
+    likesCount: 25,
     tier: {
       uid: "free-tier-uid",
       description: null,
@@ -161,6 +175,8 @@ export const socialPosts: SocialPost[] = [
     content:
       "A sneak peek at my new collection dropping soon. 😎 #FashionForward #SneakPeek",
     createdAt: "2025-03-14T11:00:00Z",
+    commentsCount: 12,
+    likesCount: 60,
     tier: {
       uid: "premium-tier-uid",
       description: "Access to exclusive collections before they drop.",
@@ -178,6 +194,8 @@ export const socialPosts: SocialPost[] = [
     uid: "post9-uid",
     content: "It’s the little things that make life beautiful. ✨ #SmallJoys",
     createdAt: "2025-03-13T07:00:00Z",
+    commentsCount: 0,
+    likesCount: 0,
     tier: {
       uid: "free-tier-uid",
       description: null,
@@ -195,6 +213,8 @@ export const socialPosts: SocialPost[] = [
     uid: "post10-uid",
     content: "Taking a break and enjoying the scenery. 🍃 #Recharge #Getaway",
     createdAt: "2025-03-12T10:15:00Z",
+    commentsCount: 5,
+    likesCount: 35,
     tier: {
       uid: "premium-tier-uid",
       description: "Members-only access to personal experiences.",

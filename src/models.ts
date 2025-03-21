@@ -26,6 +26,8 @@ export type SocialPost = {
   createdAt: string;
   tier: SocialPostTier;
   user: SocialPostUser;
+  commentsCount: number;
+  likesCount: number;
   image?: SocialPostImage;
 };
 
