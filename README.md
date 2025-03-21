@@ -44,4 +44,4 @@ You can find the design below or in the `public` folder. Not everything should b
 ## Submission
 
 When you are done, please push your branch to this repository and let us
-know that you are done. We will take a look at your code and get back to you as soon as possible.
+know that you are done. We willte take a look at your code and get back to you as soon as possible.
