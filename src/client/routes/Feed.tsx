@@ -1,9 +1,11 @@
 import { useSocialPostsInfinite } from "~/hook/useSocialPosts";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import type { SocialPost } from "src/models.js";
 import CardSocial from "~/components/CardSocial";
+import Spinner from "~/components/Spinner";
 
 export function Feed() {
+  const [showLoader, setShowLoader] = useState(false);
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading, error } =
     useSocialPostsInfinite();
 
@@ -23,7 +25,15 @@ export function Feed() {
     return () => observer.disconnect();
   }, [fetchNextPage, hasNextPage, isFetchingNextPage]);
 
-  if (isLoading) return <p>Loading...</p>;
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowLoader(true);
+    }, 30);
+  
+    return () => clearTimeout(timeout);
+  }, []);
+
+  if (isLoading && showLoader) return <Spinner />;
   if (error) return <p>Error fetching data</p>;
 
   return (
@@ -38,7 +48,7 @@ export function Feed() {
         )}
       </ul>
       <div ref={observerRef} className="text-center p-4">
-        {isFetchingNextPage ? <p>Loading more...</p> : null}
+        {isFetchingNextPage ? <Spinner /> : null}
       </div>
     </div>
   );
