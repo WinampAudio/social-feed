@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { SocialPost } from '../../../models';
+import UserAvatar from '../UserAvatar';
 
 interface CardSocialProps {
     post: SocialPost;
@@ -16,16 +17,15 @@ const CardSocial:FC<CardSocialProps> = ({ post }) => {
     };
 
     return (
-        <div className='bg-white rounded-lg p-4 pb-6 flex flex-col gap-4'>
+        <div className='bg-white rounded-lg p-6 pb-8 flex flex-col gap-4'>
             <div className="flex items-center gap-3">
-                <img 
+                <UserAvatar 
                     src={post.user.profilePicture} 
                     alt={userName} 
-                    className="w-10 h-10 rounded-xs object-cover"
                 />
                 <div>
-                    <p className="font-bold">{userName}</p>
-                    <p className="text-xs text-gray-500">{formatDate(post.createdAt)}</p>
+                    <p className="font-bold text-md">{userName}</p>
+                    <p className="text-sm text-zinc-500 font-medium">{formatDate(post.createdAt)}</p>
                 </div>
             </div>
             <p>{post.content}</p>

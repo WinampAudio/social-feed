@@ -37,7 +37,7 @@ export function Feed() {
   if (error) return <p>Error fetching data</p>;
 
   return (
-    <div className="container max-w-xl">
+    <div className="container max-w-2xl">
       <ul className="flex flex-col gap-4">
         {data?.pages.map((page) =>
           page.socialPosts.map((post: SocialPost) => (
