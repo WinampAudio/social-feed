@@ -10,6 +10,11 @@ const CardSocial:FC<CardSocialProps> = ({ post }) => {
     const image = post.image?.imagePath;
     const imageAlt = post.image?.imageFriendlyName || 'Post image';
 
+    const formatDate = (dateString: string) => {
+        const date = new Date(dateString);
+        return `${date.toLocaleString('en-US', { month: 'long' })} ${date.getDate()}, ${date.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false })}`;
+    };
+
     return (
         <div className='bg-white rounded-lg p-4 pb-6 flex flex-col gap-4'>
             <div className="flex items-center gap-3">
@@ -20,7 +25,7 @@ const CardSocial:FC<CardSocialProps> = ({ post }) => {
                 />
                 <div>
                     <p className="font-bold">{userName}</p>
-                    <p className="text-xs text-gray-500">{post.createdAt}</p>
+                    <p className="text-xs text-gray-500">{formatDate(post.createdAt)}</p>
                 </div>
             </div>
             <p>{post.content}</p>
