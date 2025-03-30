@@ -7,7 +7,7 @@ export function Layout() {
     <div className="px-6 min-h-full">
       <div className="flex flex-col max-w-[1200px] mx-auto">
         <Header />
-        <main className="size-full flex justify-center overflow-auto">
+        <main className="size-full flex justify-center overflow-auto py-12">
           <Outlet />
         </main>
       </div>

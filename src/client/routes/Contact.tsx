@@ -1,6 +1,6 @@
 export function Contact() {
   return (
-    <div className="container max-w-2xl py-12">
+    <div className="container max-w-2xl">
       <div className="space-y-6">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl">

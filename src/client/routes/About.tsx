@@ -4,7 +4,7 @@ import { Separator } from "~/components/Separator";
 
 export function About() {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4">
       {/* Hero Section */}
       <section className="mb-20 flex flex-col items-center text-center">
         <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
