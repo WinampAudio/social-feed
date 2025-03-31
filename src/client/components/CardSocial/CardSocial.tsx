@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { SocialPost } from '../../../models';
 import UserAvatar from '../UserAvatar';
 import { Button } from '~/components/Button';  
-import { Ellipsis, MessageCircle, Heart, Activity, ChevronsLeftRight } from 'lucide-react';
+import { Ellipsis, MessageCircle, Heart, Activity } from 'lucide-react';
 
 interface CardSocialProps {
     post: SocialPost;
@@ -19,7 +19,7 @@ const CardSocial:FC<CardSocialProps> = ({ post }) => {
     };
 
     return (
-        <div className='bg-white rounded-lg p-6 pb-8 flex flex-col gap-4'>
+        <div className='bg-white rounded-lg p-6 flex flex-col gap-4'>
             <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                     <UserAvatar 
@@ -32,7 +32,7 @@ const CardSocial:FC<CardSocialProps> = ({ post }) => {
                     </div>
                 </div>
                 <div className="flex items-center gap-3">
-                    <Button variant="ghost" className="px-2" disabled>
+                    <Button ariaLabel="show more options" variant="ghost" onClick={() => {}} disabled>
                         <Ellipsis /> 
                     </Button>
                 </div>
@@ -44,16 +44,16 @@ const CardSocial:FC<CardSocialProps> = ({ post }) => {
                 </div>
             )}
             <div className="flex items-center justify-end gap-3">
-                    <Button variant="ghost" className="px-2">
-                        <MessageCircle /> {post.commentsCount} comments
-                    </Button>
-                    <Button variant="ghost" className="px-2">
-                        <Heart/> {post.likesCount} likes
-                    </Button>
-                    <Button variant="ghost" className="px-2">
-                        <Activity/> Analytics
-                    </Button>
-                </div>
+                <Button ariaLabel="show comments" variant="ghost" onClick={() => {}} size="xs">
+                    <MessageCircle /> {post.commentsCount} comments
+                </Button>
+                <Button ariaLabel="add a like" variant="ghost" onClick={() => {}} size="xs">
+                    <Heart/> {post.likesCount} likes
+                </Button>
+                <Button ariaLabel="navigate to analytics" variant="ghost" to="/" size="xs">
+                    <Activity/> Analytics
+                </Button>
+            </div>
 
         </div>
     );

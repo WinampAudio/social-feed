@@ -94,7 +94,7 @@ export function About() {
               </div>
             </div>
             <div className="flex flex-col justify-center">
-              <Button wFull>
+              <Button ariaLabel="navigate to contact page" fullWidth to="/contact">
                 Contact Us
                 <ArrowRight />
               </Button>

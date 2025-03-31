@@ -1,5 +1,4 @@
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router";
 import { Button } from "./components/Button";
 
 export function App() {
@@ -16,11 +15,9 @@ export function App() {
             button below.
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link to="/feed">
-              <Button>
-                Let's go <ArrowRight/>
-              </Button>
-            </Link>
+            <Button ariaLabel="navigate to feed page" to="/feed">
+                Let's go <ArrowRight />
+            </Button>
           </div>
         </div>
       </section>
