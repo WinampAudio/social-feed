@@ -24,7 +24,7 @@ const CardSocial: FC<CardSocialProps> = ({ post }) => {
             <CardSocialContent content={post.content} />
             {image && (
                 <div className="bg-zinc-700 rounded-lg aspect-square overflow-hidden flex items-center justify-center">
-                    <img src={image} alt={imageAlt} className="object-contain" />
+                    <img src={image} alt={imageAlt} className="object-cover w-full h-full" />
                 </div>
             )}
             </div>
