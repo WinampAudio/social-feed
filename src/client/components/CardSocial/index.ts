@@ -1,1 +1,1 @@
-export { default } from './CardSocial';
+export { default } from "./CardSocial";

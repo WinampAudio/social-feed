@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
 
-//TODO assign tokens to colors, fonts,.. 
+//TODO assign tokens to colors, fonts,..
 export default {
   darkMode: "class", // Enables dark mode with class strategy
   content: ["./src/**/*.{js,ts,jsx,tsx,html}"],

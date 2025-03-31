@@ -1,39 +1,32 @@
-import { FC } from 'react';
-import { SocialPost } from '../../../models';
-import CardSocialHeader from './content/CardSocialHeader';
-import CardSocialFooter from './content/CardSocialFooter';
-import CardSocialContent from './content/CardSocialContent';
+import type { FC } from "react";
+import type { SocialPost } from "../../../models";
+import CardSocialContent from "./content/CardSocialContent";
+import CardSocialFooter from "./content/CardSocialFooter";
+import CardSocialHeader from "./content/CardSocialHeader";
 
-interface CardSocialProps {
-    post: SocialPost;
-}
+type CardSocialProps = {
+  post: SocialPost;
+};
 
 const CardSocial: FC<CardSocialProps> = ({ post }) => {
-    const userName = `${post.user.firstName} ${post.user.lastName}`;
-    const image = post.image?.imagePath;
-    const imageAlt = post.image?.imageFriendlyName || 'Post image';
+  const userName = `${post.user.firstName} ${post.user.lastName}`;
 
-    return (
-        <div className='bg-white rounded-lg p-6 flex flex-col gap-3'>
-        <div className=' flex flex-col gap-4'>
-            <CardSocialHeader
-                userName={userName}
-                profilePicture={post.user.profilePicture}
-                createdAt={post.createdAt}
-            />
-            <CardSocialContent content={post.content} />
-            {image && (
-                <div className="bg-zinc-700 rounded-lg aspect-square overflow-hidden flex items-center justify-center">
-                    <img src={image} alt={imageAlt} className="object-cover w-full h-full" />
-                </div>
-            )}
-            </div>
-            <CardSocialFooter
-                commentsCount={post.commentsCount}
-                likesCount={post.likesCount}
-            />
-        </div>
-    );
+  return (
+    <div className="bg-white rounded-lg p-6 flex flex-col gap-3">
+      <div className="flex flex-col gap-4">
+        <CardSocialHeader
+          userName={userName}
+          profilePicture={post.user.profilePicture}
+          createdAt={post.createdAt}
+        />
+        <CardSocialContent content={post.content} image={post.image} />
+      </div>
+      <CardSocialFooter
+        commentsCount={post.commentsCount}
+        likesCount={post.likesCount}
+      />
+    </div>
+  );
 };
 
 export default CardSocial;

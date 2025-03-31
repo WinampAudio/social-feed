@@ -1,8 +1,8 @@
 import "./index.css";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { App } from "./App";
 import { Layout } from "./components/Layout";
 import { About } from "./routes/About";

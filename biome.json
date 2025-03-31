@@ -12,7 +12,16 @@
   },
   "formatter": {
     "enabled": true,
-    "indentStyle": "space"
+    "indentStyle": "space",
+    "ignore": []
+  },
+  "javascript": {
+    "formatter": {
+      "indentStyle": "space",
+      "quoteStyle": "double",
+      "trailingCommas": "all",
+      "semicolons": "always"
+    }
   },
   "linter": {
     "enabled": true,

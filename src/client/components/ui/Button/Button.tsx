@@ -1,9 +1,9 @@
-import React, { FC, MouseEventHandler } from "react";
+import type { VariantProps } from "class-variance-authority";
+import { ArrowRight, type LucideProps } from "lucide-react";
+import React, { type FC, type MouseEventHandler } from "react";
 import { Link } from "react-router";
-import { buttonVariants } from "./Button.styled";
-import { type VariantProps } from 'class-variance-authority';
-import { cn } from "../../lib/utils";
-import { ArrowRight, LucideProps } from "lucide-react";
+import { cn } from "~/lib/utils";
+import { buttonVariants } from "./Button.styled.js";
 
 export type ButtonProps = {
   ariaLabel: string;
@@ -12,9 +12,9 @@ export type ButtonProps = {
   className?: string;
   children: React.ReactNode;
   to?: string;
-  variant?: VariantProps<typeof buttonVariants>['variant'];
+  variant?: VariantProps<typeof buttonVariants>["variant"];
   disabled?: boolean;
-  size?: VariantProps<typeof buttonVariants>['size'];
+  size?: VariantProps<typeof buttonVariants>["size"];
 };
 
 const Button: FC<ButtonProps> = ({
@@ -30,7 +30,7 @@ const Button: FC<ButtonProps> = ({
   ...props
 }) => {
   const hasArrowRightIcon = React.Children.toArray(children).some(
-    (child) => React.isValidElement(child) && child.type === ArrowRight
+    (child) => React.isValidElement(child) && child.type === ArrowRight,
   );
 
   const wrappedChildren = React.Children.map(children, (child) => {
@@ -38,7 +38,7 @@ const Button: FC<ButtonProps> = ({
       return React.cloneElement(child as React.ReactElement<LucideProps>, {
         className: cn(
           child.props.className,
-          "transition-transform group-hover:translate-x-1"
+          "transition-transform group-hover:translate-x-1",
         ),
       });
     }
@@ -47,7 +47,7 @@ const Button: FC<ButtonProps> = ({
 
   const combinedClassNames = cn(
     buttonVariants({ variant, fullWidth, className, size }),
-    hasArrowRightIcon && "group"
+    hasArrowRightIcon && "group",
   );
 
   if (to) {
@@ -80,4 +80,4 @@ const Button: FC<ButtonProps> = ({
 
 Button.displayName = "Button";
 
-export { Button, buttonVariants };
+export default Button;

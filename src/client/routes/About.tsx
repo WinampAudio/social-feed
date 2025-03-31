@@ -1,6 +1,6 @@
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
-import { Button } from "~/components/Button";
-import { Separator } from "~/components/Separator";
+import Button from "~/components/ui/Button";
+import { Separator } from "~/components/ui/Separator";
 
 export function About() {
   return (
@@ -94,7 +94,11 @@ export function About() {
               </div>
             </div>
             <div className="flex flex-col justify-center">
-              <Button ariaLabel="navigate to contact page" fullWidth to="/contact">
+              <Button
+                ariaLabel="navigate to contact page"
+                fullWidth
+                to="/contact"
+              >
                 Contact Us
                 <ArrowRight />
               </Button>

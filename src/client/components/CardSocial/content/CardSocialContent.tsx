@@ -1,49 +1,61 @@
-import { FC, useState, useRef, useEffect } from 'react';
-import { Button } from '~/components/Button';
+import { type FC, useEffect, useRef, useState } from "react";
+import Button from "~/components/ui/Button";
 
-interface CardSocialContentProps {
-    content: string;
-}
+type CardSocialContentProps = {
+  content: string;
+  image?: {
+    imagePath: string;
+    imageFriendlyName?: string;
+  };
+};
 
 const MAX_LINES = 3;
-const LINE_HEIGHT = 24; // Assuming 1.5 line height for text-base (16px * 1.5)
+const LINE_HEIGHT = 24;
 
-const CardSocialContent: FC<CardSocialContentProps> = ({ content }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const contentRef = useRef<HTMLParagraphElement>(null);
-    const [shouldTruncate, setShouldTruncate] = useState(false);
+const CardSocialContent: FC<CardSocialContentProps> = ({ content, image }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const contentRef = useRef<HTMLParagraphElement>(null);
+  const [shouldTruncate, setShouldTruncate] = useState(false);
 
-    useEffect(() => {
-        if (contentRef.current) {
-            const contentHeight = contentRef.current.scrollHeight;
-            const maxHeight = LINE_HEIGHT * MAX_LINES;
-            setShouldTruncate(contentHeight > maxHeight);
-        }
-    }, [content]);
+  useEffect(() => {
+    if (contentRef.current) {
+      const contentHeight = contentRef.current.scrollHeight;
+      const maxHeight = LINE_HEIGHT * MAX_LINES;
+      setShouldTruncate(contentHeight > maxHeight);
+    }
+  }, []);
 
-    return (
-        <div>
-            <p
-                ref={contentRef}
-                className={`text-base ${!isExpanded && shouldTruncate ? 'line-clamp-3' : ''}`}
-            >
-                {content}
-            </p>
-            {shouldTruncate && (
-
-                // TODO: Create a component that can function as either a link or a button, with link styling.
-                // TODO: challenge the Link styling for accessibility (Touch area size)
-                <Button
-                    className='p-0 font-bold hover:underline'
-                    ariaLabel={isExpanded ? 'show less' : 'read more'}
-                    variant="ghost"
-                    onClick={() => setIsExpanded(!isExpanded)}
-                >
-                    {isExpanded ? 'Show less' : 'Read more'}
-                </Button>
-            )}
+  return (
+    <div className="flex flex-col gap-4">
+      <div>
+        <p
+          ref={contentRef}
+          className={`text-base ${!isExpanded && shouldTruncate ? "line-clamp-3" : ""}`}
+        >
+          {content}
+        </p>
+        {shouldTruncate && (
+          <Button
+            className="p-0 font-bold hover:underline justify-start"
+            ariaLabel={isExpanded ? "show less" : "read more"}
+            variant="ghost"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? "Show less" : "Read more"}
+          </Button>
+        )}
+      </div>
+      {image && (
+        <div className="bg-zinc-700 rounded-lg aspect-square overflow-hidden flex items-center justify-center">
+          <img
+            src={image.imagePath}
+            alt={image.imageFriendlyName || "Post image"}
+            className="object-cover w-full h-full"
+          />
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default CardSocialContent;

@@ -1,13 +1,19 @@
-import { useSocialPostsInfinite } from "~/hook/useSocialPosts";
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { SocialPost } from "src/models.js";
 import CardSocial from "~/components/CardSocial";
-import Spinner from "~/components/Spinner";
+import Spinner from "~/components/ui/Spinner";
+import { useSocialPostsInfinite } from "~/hook/useSocialPosts";
 
 export function Feed() {
   const [showLoader, setShowLoader] = useState(false);
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading, error } =
-    useSocialPostsInfinite();
+  const {
+    data,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+    isLoading,
+    error,
+  } = useSocialPostsInfinite();
 
   const observerRef = useRef(null);
 
@@ -18,7 +24,7 @@ export function Feed() {
           fetchNextPage();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (observerRef.current) observer.observe(observerRef.current);
@@ -29,7 +35,7 @@ export function Feed() {
     const timeout = setTimeout(() => {
       setShowLoader(true);
     }, 30);
-  
+
     return () => clearTimeout(timeout);
   }, []);
 
@@ -44,7 +50,7 @@ export function Feed() {
             <li key={post.uid}>
               <CardSocial post={post} />
             </li>
-          ))
+          )),
         )}
       </ul>
       <div ref={observerRef} className="text-center p-4">

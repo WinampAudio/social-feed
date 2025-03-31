@@ -1,4 +1,4 @@
-import * as Avatar from '@radix-ui/react-avatar';
+import * as Avatar from "@radix-ui/react-avatar";
 
 // UserAvatar created with radix ui as radix was already used in project
 const UserAvatar = ({ src, alt }: { src?: string; alt: string }) => {
@@ -9,7 +9,7 @@ const UserAvatar = ({ src, alt }: { src?: string; alt: string }) => {
         src={src}
         alt={alt}
         onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-          e.currentTarget.src = 'fallback-image-url.jpg';
+          e.currentTarget.src = "fallback-image-url.jpg";
         }}
       />
       <Avatar.Fallback className="absolute inset-0 flex items-center justify-center text-zinc-100 bg-zinc-900 rounded-md text-xl font-bold">

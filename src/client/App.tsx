@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { Button } from "./components/Button";
+import Button from "~/components/ui/Button";
 
 export function App() {
   return (
@@ -16,7 +16,7 @@ export function App() {
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button ariaLabel="navigate to feed page" to="/feed">
-                Let's go <ArrowRight />
+              Let's go <ArrowRight />
             </Button>
           </div>
         </div>
