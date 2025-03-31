@@ -1,6 +1,8 @@
 import { FC } from 'react';
 import { SocialPost } from '../../../models';
 import UserAvatar from '../UserAvatar';
+import { Button } from '~/components/Button';  
+import { Ellipsis, MessageCircle, Heart, Activity, ChevronsLeftRight } from 'lucide-react';
 
 interface CardSocialProps {
     post: SocialPost;
@@ -18,14 +20,21 @@ const CardSocial:FC<CardSocialProps> = ({ post }) => {
 
     return (
         <div className='bg-white rounded-lg p-6 pb-8 flex flex-col gap-4'>
-            <div className="flex items-center gap-3">
-                <UserAvatar 
-                    src={post.user.profilePicture} 
-                    alt={userName} 
-                />
-                <div>
-                    <p className="font-bold text-md">{userName}</p>
-                    <p className="text-sm text-zinc-500 font-medium">{formatDate(post.createdAt)}</p>
+            <div className="flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                    <UserAvatar 
+                        src={post.user.profilePicture} 
+                        alt={userName} 
+                    />
+                    <div>
+                        <p className="font-bold text-md">{userName}</p>
+                        <p className="text-sm text-zinc-500 font-medium">{formatDate(post.createdAt)}</p>
+                    </div>
+                </div>
+                <div className="flex items-center gap-3">
+                    <Button variant="ghost" className="px-2" disabled>
+                        <Ellipsis /> 
+                    </Button>
                 </div>
             </div>
             <p>{post.content}</p>
@@ -34,6 +43,18 @@ const CardSocial:FC<CardSocialProps> = ({ post }) => {
                     <img src={image} alt={imageAlt} className="object-contain" />
                 </div>
             )}
+            <div className="flex items-center justify-end gap-3">
+                    <Button variant="ghost" className="px-2">
+                        <MessageCircle /> {post.commentsCount} comments
+                    </Button>
+                    <Button variant="ghost" className="px-2">
+                        <Heart/> {post.likesCount} likes
+                    </Button>
+                    <Button variant="ghost" className="px-2">
+                        <Activity/> Analytics
+                    </Button>
+                </div>
+
         </div>
     );
 };

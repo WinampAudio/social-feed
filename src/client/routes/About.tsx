@@ -94,9 +94,9 @@ export function About() {
               </div>
             </div>
             <div className="flex flex-col justify-center">
-              <Button className="group w-full justify-between">
+              <Button wFull>
                 Contact Us
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRight />
               </Button>
               <Separator className="my-6" />
               <div className="text-center">

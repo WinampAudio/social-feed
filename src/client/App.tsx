@@ -17,8 +17,8 @@ export function App() {
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Link to="/feed">
-              <Button className="gap-2">
-                Let's go <ArrowRight className="h-4 w-4" />
+              <Button>
+                Let's go <ArrowRight/>
               </Button>
             </Link>
           </div>
