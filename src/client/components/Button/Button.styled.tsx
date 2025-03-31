@@ -9,7 +9,7 @@ export const buttonVariants = cva(
       "[&_svg]:shrink-0",
 
       // Focus styles
-      "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500",
+      "focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-ring/50",
      
       // Hover styles
       "hover:cursor-pointer",

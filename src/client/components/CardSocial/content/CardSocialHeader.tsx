@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { Ellipsis } from 'lucide-react';
 import { Button } from '~/components/Button';
 import UserAvatar from '../../UserAvatar';
+import { Dropdown } from '../../DropDown/Dropdown';
 
 interface CardSocialHeaderProps {
     userName: string;
@@ -28,6 +29,7 @@ const CardSocialHeader: FC<CardSocialHeaderProps> = ({ userName, profilePicture,
                 </div>
             </div>
             <div className="flex items-center gap-3">
+                <Dropdown />
                 <Button ariaLabel="show more options" variant="ghost" onClick={() => {}} disabled>
                     <Ellipsis /> 
                 </Button>
