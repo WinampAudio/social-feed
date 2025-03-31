@@ -8,7 +8,7 @@ export const socialPosts: SocialPost[] = [
   {
     uid: "post1-uid",
     content:
-      "Feeling blessed today! Grateful for everything in my life. 🌟 #blessed",
+      "Feeling blessed today! Grateful for everything in my life. 🌟 #blessed Feeling blessed today! Grateful for everything in my life. 🌟 #blessed Feeling blessed today! Grateful for everything in my life. 🌟 #blessed Feeling blessed today! Grateful for everything in my life. 🌟 #blessed Feeling blessed today! Grateful for everything in my life. 🌟 #blessed Feeling blessed today! Grateful for everything in my life. 🌟 #blessed Feeling blessed today! Grateful for everything in my life. 🌟 #blessed Feeling blessed today! Grateful for everything in my life. 🌟 #blessed",
     createdAt: "2025-03-21T08:30:00Z",
     commentsCount: 10,
     likesCount: 52,

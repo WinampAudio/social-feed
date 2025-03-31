@@ -3,8 +3,8 @@ import { cva } from "class-variance-authority";
 export const buttonVariants = cva(
     [
       // Base styles
-      "inline-flex items-center justify-center gap-2",
-      "h-10 rounded-md transition-colors",
+      "py-3 inline-flex items-center justify-center gap-2",
+      "rounded-md transition-colors",
       "text-sm whitespace-nowrap",
       "[&_svg]:shrink-0",
 

@@ -2,6 +2,7 @@ import { FC } from 'react';
 import { SocialPost } from '../../../models';
 import CardSocialHeader from './content/CardSocialHeader';
 import CardSocialFooter from './content/CardSocialFooter';
+import CardSocialContent from './content/CardSocialContent';
 
 interface CardSocialProps {
     post: SocialPost;
@@ -13,18 +14,20 @@ const CardSocial: FC<CardSocialProps> = ({ post }) => {
     const imageAlt = post.image?.imageFriendlyName || 'Post image';
 
     return (
-        <div className='bg-white rounded-lg p-6 flex flex-col gap-4'>
+        <div className='bg-white rounded-lg p-6 flex flex-col gap-3'>
+        <div className=' flex flex-col gap-4'>
             <CardSocialHeader
                 userName={userName}
                 profilePicture={post.user.profilePicture}
                 createdAt={post.createdAt}
             />
-            <p>{post.content}</p>
+            <CardSocialContent content={post.content} />
             {image && (
                 <div className="bg-zinc-700 rounded-lg aspect-square overflow-hidden flex items-center justify-center">
                     <img src={image} alt={imageAlt} className="object-contain" />
                 </div>
             )}
+            </div>
             <CardSocialFooter
                 commentsCount={post.commentsCount}
                 likesCount={post.likesCount}
