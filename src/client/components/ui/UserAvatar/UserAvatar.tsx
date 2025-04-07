@@ -8,9 +8,6 @@ const UserAvatar = ({ src, alt }: { src?: string; alt: string }) => {
         className="w-full h-full rounded-md object-cover"
         src={src}
         alt={alt}
-        onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-          e.currentTarget.src = "fallback-image-url.jpg";
-        }}
       />
       <Avatar.Fallback className="absolute inset-0 flex items-center justify-center text-zinc-100 bg-zinc-900 rounded-md text-xl font-bold">
         {alt.charAt(0).toUpperCase()}

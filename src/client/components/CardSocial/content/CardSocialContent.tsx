@@ -30,7 +30,7 @@ const CardSocialContent: FC<CardSocialContentProps> = ({ content, image }) => {
       <div>
         <p
           ref={contentRef}
-          className={`text-base ${!isExpanded && shouldTruncate ? "line-clamp-3" : ""}`}
+          className={`text-base ${!isExpanded && shouldTruncate && `line-clamp-${MAX_LINES}`}`}
         >
           {content}
         </p>

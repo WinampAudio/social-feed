@@ -24,7 +24,6 @@ const CardSocialHeader: FC<CardSocialHeaderProps> = ({
     <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between gap-8 sm:gap-3">
       <div className="flex items-start gap-3">
         <UserAvatar src={profilePicture} alt={userName} />
-
         <div>
           <p className="font-bold text-md">{userName}</p>
           <p className="text-sm text-zinc-500 font-medium">

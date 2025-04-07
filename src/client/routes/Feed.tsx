@@ -54,7 +54,7 @@ export function Feed() {
         )}
       </ul>
       <div ref={observerRef} className="text-center p-4">
-        {isFetchingNextPage ? <Spinner /> : null}
+        {isFetchingNextPage && <Spinner />}
       </div>
     </div>
   );
