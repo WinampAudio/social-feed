@@ -30,15 +30,17 @@ function Header() {
           <span className="text-xl font-bold">Logo</span>
         </Link>
 
-        <nav className="flex space-x-4">
+        <nav className="flex gap-4">
           {tabs.map((tab) => (
             <NavLink
               key={tab.value}
               to={`/${tab.value}`}
-              className={classNames(
-                "px-3 py-2 text-sm font-medium transition-colors hover:text-slate-950 text-slate-600 border-b-2 border-transparent",
-                "[&.active]:text-slate-950 [&.active]:border-black",
-              )}
+              className={({ isActive }) =>
+                classNames(
+                  "px-3 py-2 text-sm font-medium transition-colors text-slate-600 border-b-2 border-transparent hover:text-slate-950 border-solid transition-all",
+                  isActive && "text-slate-950 border-black"
+                )
+              }
             >
               {tab.name}
             </NavLink>

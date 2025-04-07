@@ -14,7 +14,7 @@ export function App() {
             You're ready you can navigate to the feed page by clicking the
             button below.
           </p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center inline-flex">
             <Button ariaLabel="navigate to feed page" to="/feed">
               Let's go <ArrowRight />
             </Button>
