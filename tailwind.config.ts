@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 //TODO assign tokens to colors, fonts,..
 export default {
