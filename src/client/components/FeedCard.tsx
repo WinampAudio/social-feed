@@ -8,7 +8,7 @@ interface FeedCardProps {
 
 function FeedCard({ post }: FeedCardProps) {
   return (
-    <article className="bg-white rounded-xl p-6 w-full space-y-4">
+    <article className="bg-white rounded-xl p-6 w-full flex flex-col gap-4">
       {/* Header */}
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
@@ -55,7 +55,13 @@ function FeedCard({ post }: FeedCardProps) {
             </select>
           </div>
 
-          <button disabled className="w-8 h-8 disabled:opacity-45">...</button>
+          <button
+            type="button"
+            disabled
+            className="w-8 h-8 disabled:opacity-45"
+          >
+            ...
+          </button>
         </div>
       </div>
 
@@ -81,7 +87,26 @@ function FeedCard({ post }: FeedCardProps) {
       )}
 
       {/* Footer */}
-      <div></div>
+      <div
+        role="group"
+        className="flex items-center justify-end gap-2 text-xs font-medium"
+      >
+        <button type="button" className="p-2">
+          💬 {post.commentsCount} comments
+          <span className="sr-only">Read this post's comments</span>
+        </button>
+        <button
+          type="button"
+          className="p-2"
+          aria-pressed="false"
+          aria-label={`Like this post. Current like count: ${post.likesCount}`}
+        >
+          ❤️ {post.likesCount} likes
+        </button>
+        <button type="button" className="p-2">
+          📈 Analytics
+        </button>
+      </div>
     </article>
   );
 }
