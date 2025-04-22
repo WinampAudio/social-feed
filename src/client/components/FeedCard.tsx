@@ -1,6 +1,8 @@
+import { Activity, Ellipsis, Heart, MessageCircle } from "lucide-react";
 import { NavLink } from "react-router";
 import { FREE_TIER_ID, PREMIUM_TIER_ID } from "~/lib/constants";
 import type { FeedPost } from "~/lib/types";
+import FeedFooterButton from "./FeedFooterButton";
 
 interface FeedCardProps {
   post: FeedPost;
@@ -58,9 +60,9 @@ function FeedCard({ post }: FeedCardProps) {
           <button
             type="button"
             disabled
-            className="w-8 h-8 disabled:opacity-45"
+            className="w-8 h-8 flex items-center justify-center disabled:opacity-45"
           >
-            ...
+            <Ellipsis size="14" />
           </button>
         </div>
       </div>
@@ -89,23 +91,24 @@ function FeedCard({ post }: FeedCardProps) {
       {/* Footer */}
       <div
         role="group"
-        className="flex items-center justify-end gap-2 text-xs font-medium"
+        className="flex items-center justify-end gap-2"
       >
-        <button type="button" className="p-2">
-          💬 {post.commentsCount} comments
+        <FeedFooterButton icon={<MessageCircle size="12" />}>
+          {post.commentsCount} comments
           <span className="sr-only">Read this post's comments</span>
-        </button>
-        <button
-          type="button"
-          className="p-2"
+        </FeedFooterButton>
+
+        <FeedFooterButton
+          icon={<Heart size="12" />}
           aria-pressed="false"
           aria-label={`Like this post. Current like count: ${post.likesCount}`}
         >
-          ❤️ {post.likesCount} likes
-        </button>
-        <button type="button" className="p-2">
-          📈 Analytics
-        </button>
+          {post.likesCount} likes
+        </FeedFooterButton>
+
+        <FeedFooterButton icon={<Activity size="12" />}>
+          Analytics
+        </FeedFooterButton>
       </div>
     </article>
   );
