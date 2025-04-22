@@ -9,6 +9,16 @@ interface FeedCardProps {
 }
 
 function FeedCard({ post }: FeedCardProps) {
+    const formattedDate = new Date(post.createdAt)
+    .toLocaleString("en-US", {
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      hour12: false,
+    })
+    .replace(" at ", ", ");
+
   return (
     <article className="bg-white rounded-xl p-6 w-full flex flex-col gap-4">
       {/* Header */}
@@ -36,7 +46,7 @@ function FeedCard({ post }: FeedCardProps) {
               dateTime={post.createdAt}
               className="block text-xs text-gray-500"
             >
-              {new Date(post.createdAt).toLocaleDateString("en-US")}
+              {formattedDate}
             </time>
           </div>
         </div>
