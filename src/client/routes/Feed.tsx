@@ -1,3 +1,4 @@
+import FeedCard from "~/components/FeedCard";
 import useFeedPosts from "~/hooks/useFeedPosts";
 
 export function Feed() {
@@ -11,5 +12,15 @@ export function Feed() {
     return <div>Error: {error.message}</div>;
   }
 
-  return <> {data?.socialPosts.map((post) => post.uid)}</>;
+  return (
+    <section className="w-full max-w-xl mx-auto py-10">
+      <ul className="space-y-6">
+        {data?.socialPosts.map((post) => (
+          <li key={post.uid}>
+            <FeedCard post={post} />
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
 }
