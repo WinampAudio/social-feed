@@ -1,11 +1,12 @@
 import FeedCard from "~/components/FeedCard";
+import LoadingIcon from "~/components/LoadingIcon";
 import useFeedPosts from "~/hooks/useFeedPosts";
 
 export function Feed() {
   const { data, isLoading, error } = useFeedPosts();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <LoadingIcon />;
   }
 
   if (error) {

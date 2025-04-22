@@ -9,7 +9,7 @@ interface FeedCardProps {
 }
 
 function FeedCard({ post }: FeedCardProps) {
-    const formattedDate = new Date(post.createdAt)
+  const formattedDate = new Date(post.createdAt)
     .toLocaleString("en-US", {
       month: "long",
       day: "numeric",
@@ -18,6 +18,8 @@ function FeedCard({ post }: FeedCardProps) {
       hour12: false,
     })
     .replace(" at ", ", ");
+
+  // Implement "Read More" functionality?
 
   return (
     <article className="bg-white rounded-xl p-3 w-full flex flex-col gap-4 md:p-6">
@@ -38,7 +40,10 @@ function FeedCard({ post }: FeedCardProps) {
           </NavLink>
 
           <div className="leading-none">
-            <NavLink to={`/${post.user.uid}`} className="text-xs font-bold md:text-sm">
+            <NavLink
+              to={`/${post.user.uid}`}
+              className="text-xs font-bold md:text-sm"
+            >
               {post.user.firstName} {post.user.lastName}
             </NavLink>
 
@@ -99,10 +104,7 @@ function FeedCard({ post }: FeedCardProps) {
       )}
 
       {/* Footer */}
-      <div
-        role="group"
-        className="flex items-center justify-end gap-2"
-      >
+      <div role="group" className="flex items-center justify-end gap-2">
         <FeedFooterButton icon={<MessageCircle size="12" />}>
           {post.commentsCount} comments
           <span className="sr-only">Read this post's comments</span>
