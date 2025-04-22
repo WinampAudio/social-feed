@@ -20,7 +20,7 @@ function FeedCard({ post }: FeedCardProps) {
     .replace(" at ", ", ");
 
   return (
-    <article className="bg-white rounded-xl p-6 w-full flex flex-col gap-4">
+    <article className="bg-white rounded-xl p-3 w-full flex flex-col gap-4 md:p-6">
       {/* Header */}
       <div className="flex items-center justify-between gap-4">
         <div className="flex items-center gap-2">
@@ -31,14 +31,14 @@ function FeedCard({ post }: FeedCardProps) {
             tabIndex={-1}
           >
             <img
-              className="w-10 h-10 rounded-sm"
+              className="w-8 h-8 rounded-sm md:w-10 md:h-10"
               src={post.user.profilePicture}
               alt=""
             />
           </NavLink>
 
-          <div>
-            <NavLink to={`/${post.user.uid}`} className="text-sm font-bold">
+          <div className="leading-none">
+            <NavLink to={`/${post.user.uid}`} className="text-xs font-bold md:text-sm">
               {post.user.firstName} {post.user.lastName}
             </NavLink>
 
@@ -80,7 +80,7 @@ function FeedCard({ post }: FeedCardProps) {
       {/* Content */}
       {post.content && (
         <div>
-          <p className="text-md">{post.content}</p>
+          <p className="text-sm md:text-md">{post.content}</p>
         </div>
       )}
 
